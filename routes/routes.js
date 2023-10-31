@@ -10,6 +10,11 @@ import { findPub, findAllPubs } from "../controllers/FindPubController.js";
 import { updatePub } from "../controllers/UpdatePubController.js";
 import { deletePub } from "../controllers/DeletePubController.js";
 
+import { registerComm } from "../controllers/RegisterCommController.js";
+import { findComm, findCommsPerPub } from "../controllers/FindCommController.js";
+import { updateComm } from "../controllers/UpdateCommController.js";
+import { deleteComm } from "../controllers/DeleteCommController.js";
+
 const router = Router();
 
 router.post('/registrar-usuario', registerUser);
@@ -23,5 +28,11 @@ router.post('/buscar-publicacion/:id', findPub);
 router.get('/obtener-publicaciones', findAllPubs);
 router.put('/actualizar-publicacion/:id', updatePub);
 router.delete('/borrar-publicacion/:id', deletePub);
+
+router.post('/nuevo-comentario', registerComm);
+router.post('/publicacion/:idPub/buscar-comentario/:id', findComm);
+router.get('/publicacion/:idPub/buscar-comentario/', findCommsPerPub);
+router.put('/publicacion/:idPub/actualizar-comentario/:id', updateComm);
+router.delete('/publicacion/:idPub/eliminar-comentario/:id', deleteComm);
 
 export default router;

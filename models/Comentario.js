@@ -17,6 +17,7 @@ export const Comentario = sequelize.define('Comentario', {
     },
     fecha_creacion: {
       type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
       allowNull: false
     },
     publicacion_id: {

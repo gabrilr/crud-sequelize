@@ -19,6 +19,7 @@ export const Publicacion = sequelize.define('Publicacion', {
     },
     fecha_creacion: {
       type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
       allowNull: false
     },
     usuario_id: {

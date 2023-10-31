@@ -3,7 +3,7 @@ import { Publicacion } from '../models/Publicaciones.js';
 
 export const updatePub = async (req, res) => {
     const { titulo, contenido, usuario_id } = req.body;
-    const { idPub } = req.params;
+    const idPub = req.params.id;
 
     try {
         const publicacion = await Publicacion.findByPk(idPub);
